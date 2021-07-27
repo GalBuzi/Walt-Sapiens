@@ -60,7 +60,7 @@ public class WaltServiceImpl implements WaltService {
 
     private Driver findAvailableDriver(Restaurant restaurant, Date deliveryTime) {
 
-        // go over all drivers in the city and find for each one if he is available to take new delivery
+        // go over all drivers in the city and find for each one if he is available to take new delivery, sorted by amount of deliveries
         List<Driver> availableDriversQuery = deliveryRepository.findAvailableDrivers(restaurant.getCity(), deliveryTime);
 
         if (availableDriversQuery.isEmpty())
